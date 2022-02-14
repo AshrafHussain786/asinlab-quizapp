@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +41,35 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+p {
+  font-size: 12px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: auto;
+}
+
+.card {
+  width: 18 rem;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.correct {
+  background-color: rgb(17, 218, 17) !important;
+}
+
+.wrong {
+  background-color: rgb(218, 17, 17) !important;
+}
+.buttonC{
+  color: white;
 }
