@@ -8,10 +8,11 @@ const QuizDetail = () => {
   const [allAnswers, setAllAnswers] = useState([]);
   const [selected, setSelected] = useState("");
   const [index, setIndex] = useState()
+  const [qAttended, setQAttended] = useState(0);
   
-  const createMarkup = (text) => {
-    return { __html: text };
-  };
+  // const createMarkup = (text) => {
+  //   return { __html: text };
+  // };
 
   function nextQuestion () {
     if (!selected) {
@@ -21,6 +22,7 @@ const QuizDetail = () => {
     setCurQuestion(curQuestion + 1);
     setSelected("")    
     setIndex()
+    setQAttended(qAttended+1)
   }
 }
 
@@ -74,8 +76,7 @@ const QuizDetail = () => {
             </div>
             <div>
               <p className="text-left">{QuizArray[curQuestion].difficulty}</p>              
-              {/* <i className="fa fa-star" style={{width: "10px", height: "10px"}} ></i>*/}
-              {/* {<FontAwesomeIcon icon="fas fa-star" />} */}
+              {/* <i className="fa fa-star" style={{width: "10px", height: "10px"}} ></i>*/}              
             </div>
             <div className="question" style={{ fontSize: "25px" }}>
               {QuizArray[curQuestion].question} ?
@@ -89,7 +90,7 @@ const QuizDetail = () => {
                         getAnswer(i, ans);
                       }}
                       className={`card bg-light 
-                                  ${index === i ? ans === QuizArray[curQuestion].correct_answer ? "correct" : "wrong":""}`} 
+                                  ${index === i ? ans === QuizArray[curQuestion].correct_answer ? "correct" : "wrong" : ""}`} 
                                   style={{textAlign: "center"}} value={ans} >                                        
                         {ans}
                       </div>
@@ -101,6 +102,10 @@ const QuizDetail = () => {
               <button className="btn btn-dark" onClick={nextQuestion}>
                 Next Question
               </button>
+            </div>
+            <br />
+            <div>                          
+              <h4>Current Progress: {score} out of {qAttended} </h4>
             </div>
           </div>
         </div>
