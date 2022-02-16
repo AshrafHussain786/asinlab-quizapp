@@ -39,7 +39,7 @@ const QuizArray = [
       "Malcolm Wheeler-Nicholson",
       "Robert Crumb",
     ],
-  }
+  },
   {
     category: "Entertainment 3A Board Games",
     type: "multiple",
